@@ -1,0 +1,10 @@
+node_modules/
+public/frames/
+public/frames-v2/
+stills/
+build/
+*.blend
+*.blend1
+.cache/
+public/frames-v4/
+toolbar-projection.json
