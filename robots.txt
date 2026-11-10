@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://akiaruki.github.io/sitemap.xml
