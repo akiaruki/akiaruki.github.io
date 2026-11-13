@@ -55,3 +55,6 @@
 @media (forced-colors: active) {
   .aki-studio .fx-grid img, .aki-studio .batch-facts li, .aki-studio .new-badge { border-color: CanvasText; }
 }
+
+/* The Looks demo spans the full width now that the phone capture beside it is removed. */
+.aki-studio .aki-looks-spread { grid-template-columns: minmax(0, 1fr); }
