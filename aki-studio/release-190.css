@@ -58,3 +58,8 @@
 
 /* The Looks demo spans the full width now that the phone capture beside it is removed. */
 .aki-studio .aki-looks-spread { grid-template-columns: minmax(0, 1fr); }
+
+/* Six collections sit on one row on wide screens (three per row on tablets, one per row on phones). */
+@media (min-width: 1101px) {
+  .aki-studio .collection-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+}
