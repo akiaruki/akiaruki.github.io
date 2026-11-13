@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-release="20261113-studio-190-1">
+<html lang="en" data-release="20261113-studio-190-2">
   <head>
     <meta charset="utf-8" /><meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; object-src 'none'; script-src 'self' 'sha256-AqEb8sT4tkEHKvzKC7SEd3WBXwJ5u4M3nyAcbm6Qtbg='; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; media-src 'self'; connect-src 'none'"><meta name="referrer" content="no-referrer"><meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#080a09" />
@@ -72,7 +72,7 @@
     </script>
     <title>Aki Studio — Free Photo Editor for iPhone &amp; iPad</title>
     <link rel="icon" type="image/svg+xml" href="favicon-tab.svg?v=20261104">
-    <link rel="preload" as="image" href="assets/app-190-hero.jpg" />
+    <link rel="preload" as="image" href="assets/app-190-looks.jpg" />
     <link rel="stylesheet" href="studio.css?v=20261002-scroll-refined-1" />
     <link rel="stylesheet" href="release.css?v=20261012-curves-1" />
     <link rel="stylesheet" href="color-mixer-demo.css?v=20261012-1" />
@@ -80,7 +80,7 @@
     <link rel="stylesheet" href="curves-demo.css?v=20261012-1" />
     <script src="curves-demo.js?v=20261012-1" defer></script>
     <script src="studio.js?v=20261020-1" defer></script>
-    <script src="tools-demo.js?v=20261012-hold-1" defer></script>
+    <script src="tools-demo.js?v=20261113-tap-1" defer></script>
 
     <style>
       /* The complete built-in catalog replaces the Looks screenshot. */
@@ -232,9 +232,9 @@
               </div>
               <figure class="editor-illustration aki-preview">
                 <div class="editor-phone aki-device">
-                  <img class="editor-capture" src="assets/app-190-hero.jpg" alt="Aki Studio on iPhone showing a Kamikochi autumn landscape edited with the Kogane Look" width="780" height="1696" fetchpriority="high" decoding="async" />
+                  <img class="editor-capture" src="assets/app-190-looks.jpg" alt="Aki Studio on iPhone: a yellow flower photograph with the Looks panel open and the Ryn Look Akebono selected" width="780" height="1696" fetchpriority="high" decoding="async" />
                 </div>
-                <figcaption>Aki Studio · <span lang="ja">黄金</span> Kogane</figcaption>
+                <figcaption>Aki Studio · <span lang="ja">リン</span> Ryn · <span lang="ja">曙</span> Akebono</figcaption>
               </figure>
             </article>
             <article class="story-chapter aki-feature">
@@ -555,9 +555,9 @@
           </div>
           <figure class="editor-illustration current-look-proof">
             <div class="editor-phone">
-              <img class="editor-capture" src="assets/app-190-looks.jpg" alt="Aki Studio Looks panel on iPhone with the Ryn collection open and Akebono selected over a yellow flower photograph" width="780" height="1696" loading="lazy" decoding="async" />
+              <img class="editor-capture" src="assets/app-190-hero.jpg" alt="Aki Studio on iPhone showing a Kamikochi autumn landscape edited with the Kogane Look" width="780" height="1696" loading="lazy" decoding="async" />
             </div>
-            <figcaption>Aki Studio · Looks on iPhone</figcaption>
+            <figcaption>Aki Studio · <span lang="ja">黄金</span> Kogane on iPhone</figcaption>
           </figure>
         </div>
         <div class="collection-grid" aria-label="Adaptive Look collections">
@@ -672,7 +672,8 @@
               that feels like you.
             </p>
             <p class="organizer-instructions" id="organizer-instructions">
-              Press and hold a tool, drag it into place, then release.
+              Drag a tool into place, or tap a tool and then tap where it
+              should go. On touch screens, press and hold to drag.
               <span class="sr-only"
                 >Keyboard: Space to pick up, arrow keys to move, Enter to place,
                 Escape to cancel.</span

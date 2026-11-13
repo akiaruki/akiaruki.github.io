@@ -60,7 +60,7 @@
       node.setAttribute("aria-pressed", String(active?.id === id));
       node.classList.toggle(
         "is-picked",
-        active?.id === id && active.mode === "keyboard",
+        active?.id === id && active.mode !== "drag",
       );
     }
   };
@@ -189,7 +189,9 @@
     } else {
       grid.dataset.arranging = mode;
       announce(
-        `${names.get(id)} selected. Arrow keys move; Enter places; Escape cancels.`,
+        mode === "tap"
+          ? `${names.get(id)} selected. Tap where it should go, or tap it again to cancel.`
+          : `${names.get(id)} selected. Arrow keys move; Enter places; Escape cancels.`,
       );
     }
     labels();
@@ -324,7 +326,11 @@
       start(id, "drag", point);
       active.kind = kind;
       active.identifier = identifier;
-      if (kind === "pointer") grid.setPointerCapture(identifier);
+      if (kind === "pointer") {
+        try {
+          grid.setPointerCapture(identifier);
+        } catch {}
+      }
     }, 420);
     pending = state;
   };
@@ -335,9 +341,15 @@
     ) {
       const state = pending;
       clearPending();
-      // Movement before pickup cancels the hold. This lets pointer and touch
-      // scrolling begin naturally, and prevents an early move from becoming a drag.
+      // Touch: movement before pickup cancels the hold, so swipes keep scrolling the page.
       if (state.kind === "touch") return;
+      // Mouse and pen: moving past the threshold picks the tool up immediately.
+      start(state.id, "drag", state.point);
+      active.kind = state.kind;
+      active.identifier = state.identifier;
+      try {
+        grid.setPointerCapture(state.identifier);
+      } catch {}
     }
     const a = active;
     if (!a || a.mode !== "drag") return;
@@ -362,8 +374,10 @@
         point.y >= bounds.top &&
         point.y <= bounds.bottom;
       finish(!cancel && inside);
-      if (kind === "pointer" && grid.hasPointerCapture(identifier))
-        grid.releasePointerCapture(identifier);
+      try {
+        if (kind === "pointer" && grid.hasPointerCapture(identifier))
+          grid.releasePointerCapture(identifier);
+      } catch {}
     }
   };
   for (const [id, name] of catalog) {
@@ -388,7 +402,18 @@
         event.preventDefault();
         return;
       }
-      // Pointer clicks do not rearrange. Keyboard users use arrows and Enter.
+      // Tap a tool, then tap the position it should move to. Tap it again to cancel.
+      if (active && active.mode !== "tap") return;
+      if (!active) {
+        start(id, "tap");
+        return;
+      }
+      if (active.id === id) {
+        finish(false);
+        return;
+      }
+      choose(active.draft.indexOf(id));
+      finish(true);
     });
     node.addEventListener("keydown", (event) => {
       const deltas = {
@@ -540,7 +565,21 @@
     clearSettling();
   };
   window.addEventListener("blur", cancel);
-  window.addEventListener("resize", cancel, { passive: true });
+  let lastWidth = innerWidth;
+  window.addEventListener(
+    "resize",
+    () => {
+      if (innerWidth !== lastWidth) {
+        lastWidth = innerWidth;
+        cancel();
+      }
+    },
+    { passive: true },
+  );
+  // A tap outside the tools cancels a pending tap move.
+  document.addEventListener("click", (event) => {
+    if (active?.mode === "tap" && !grid.contains(event.target)) finish(false);
+  });
   window.addEventListener("pagehide", cancel);
   window.addEventListener(
     "wheel",
