@@ -1,0 +1,57 @@
+/* Version 1.9 additions: Effects and Batch color grading. Builds on studio.css, release.css and aki-landing.css. */
+.aki-studio .editor-capture { object-fit: cover; }
+
+.aki-studio .v190-spread {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr);
+  align-items: center;
+  gap: clamp(36px, 6vw, 96px);
+}
+.aki-studio .v190-spread--reverse { grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr); }
+.aki-studio .v190-spread--reverse .v190-figure { order: -1; }
+.aki-studio .v190-copy { min-width: 0; }
+.aki-studio .v190-copy h2 { font-size: clamp(36px, 4.4vw, 66px); }
+.aki-studio .v190-copy > p:not(.eyebrow) { max-width: 560px; margin-top: 24px; font-size: 16px; line-height: 1.75; }
+.aki-studio .v190-figure { width: 100%; margin: 0; padding: 0; }
+.aki-studio .v190-figure .editor-phone { width: min(100%, 290px); }
+
+.aki-studio .new-badge {
+  display: inline-block; margin-right: 10px; padding: 3px 9px 2px; border-radius: 999px;
+  border: 1px solid currentColor; font-size: 9px; letter-spacing: .14em;
+}
+
+.aki-studio .fx-grid {
+  display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px 12px;
+  max-width: 600px; margin: 36px 0 0; padding: 0; list-style: none;
+}
+.aki-studio .fx-grid li { display: grid; justify-items: center; gap: 8px; min-width: 0; }
+.aki-studio .fx-grid img {
+  display: block; width: 100%; height: auto; aspect-ratio: 1; border-radius: 16px;
+  border: 1px solid var(--release-edge, #ffffff1f); background: #07080a;
+}
+.aki-studio .fx-grid span {
+  max-width: 100%; color: var(--aki-muted, #a9b2ac); font-size: 11px; line-height: 1.35;
+  text-align: center; overflow-wrap: anywhere;
+}
+
+.aki-studio .batch-facts {
+  display: flex; flex-wrap: wrap; gap: 10px; margin: 32px 0 0; padding: 0; list-style: none;
+}
+.aki-studio .batch-facts li {
+  padding: 10px 16px; border-radius: 999px; border: 1px solid var(--release-edge, #ffffff1f);
+  color: var(--aki-text, #edf2ee); font-size: 13px; line-height: 1.4;
+  background: linear-gradient(145deg, #ffffff0d, #ffffff03);
+}
+
+@media (max-width: 900px) {
+  .aki-studio .v190-spread, .aki-studio .v190-spread--reverse { grid-template-columns: minmax(0, 1fr); }
+  .aki-studio .v190-spread--reverse .v190-figure { order: 0; }
+  .aki-studio .fx-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (max-width: 420px) {
+  .aki-studio .fx-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px 10px; }
+  .aki-studio .fx-grid img { border-radius: 14px; }
+}
+@media (forced-colors: active) {
+  .aki-studio .fx-grid img, .aki-studio .batch-facts li, .aki-studio .new-badge { border-color: CanvasText; }
+}

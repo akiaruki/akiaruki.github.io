@@ -13,7 +13,7 @@ Static source for the [Aki Studio product page](https://akiaruki.github.io/aki-p
 
 ## Product and release status
 
-As of October 6, 2026, Aki Studio is available for testing through TestFlight. The public App Store release is forthcoming; do not display a live App Store badge or imply it is already published. The current installation CTA is the approved [TestFlight invitation](https://testflight.apple.com/join/ef48hkdQ). Access depends on available spaces and compatible devices. Android remains coming soon.
+As of November 13, 2026, Aki Studio is available on the App Store for iPhone and iPad; Android remains coming soon. Version 1.9.0 (build 76) is in App Review. It adds Effects (twelve stackable film and lens effects), Batch color grading (one Look on up to nine photos, full-resolution export), the リン (Ryn) collection of eleven Looks and refreshed アキ Looks. The page describes these as new; keep the copy aligned with the version actually live on the App Store.
 
 All built-in Looks and all twelve editing tools are free, with no subscriptions, in-app purchases, or paid feature tiers. The page presents the Aki, Film, Cinematic, Daily, and B&W collections, retains the original Japanese Aki Look names, and describes the movable glass panels and customizable workspace.
 
@@ -29,6 +29,7 @@ The approved public contact is [akistudio.mobile@gmail.com](mailto:akistudio.mob
 - Narrow screens, short screens, reduced-motion preferences, and JavaScript-disabled browsing retain the chapters in ordinary document flow. Core copy and installation links remain available without JavaScript.
 - The separate twelve-tool organizer is an independent web demonstration using the existing rasterized app glyph artwork. Hold-and-drag, tap-then-tap, and keyboard controls provide alternatives. Optional local storage remembers only the demo arrangement; unavailable storage leaves it usable for the visit.
 - The [Tools Guide](tools.html) explains each of the twelve tools with anchored navigation, existing tool glyphs, actual controls, and practical uses. Its descriptions were checked against the current app's tool catalog and UI controls. It uses static HTML/CSS and remains readable without JavaScript. The home page's About section introduces the product; [Licenses](licenses.html) contains public copyright, license, and disclosure information.
+- Version 1.9 sections (Effects, Batch color grading) use `release-190.css`. Their phone images (`assets/app-190-*.jpg`) are 780 px-wide JPEG reductions of iPhone 6.3-inch simulator captures of build 76 made for the App Store screenshots; nothing was redrawn. The effect tiles in `assets/fx/` are the app's own effect artwork SVGs, unchanged.
 - The Look selector swaps pre-rendered images; it does not ship or execute the app's Look recipes. Below-the-fold images load lazily, and explicit dimensions reserve space. Mobile navigation supports Escape and focus return.
 
 ## Asset provenance
