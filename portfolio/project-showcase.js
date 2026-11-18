@@ -7,7 +7,6 @@
     { name: 'Aki Studio', subtitle: 'Photo editing', image: 'aki-studio/favicon-app.png', introduction: 'Aki Studio is a photo editor with Looks, color grading and tools for adjusting your photographs.' },
     { name: 'Aki Camera', subtitle: 'Camera & video', image: 'aki-camera/app-icon.png', introduction: 'Aki Camera brings camera capture, video recording and Aki Looks together for everyday photography.' },
     { name: 'Aki Gazette', subtitle: 'Layouts & design', image: 'aki-gazette/favicon-app.png', introduction: 'Aki Gazette is a creative workspace for arranging photographs, words and artwork into photo stories and graphics.' },
-    { name: 'Aki Moments', subtitle: 'Video editing', image: 'aki-moments/moments-icon.png', introduction: 'Aki Moments is a video editor for combining clips, photographs, sound, text and animated chalk artwork.' }
   ];
   const heading = document.createElement('div');
   heading.className = 'section-heading';
