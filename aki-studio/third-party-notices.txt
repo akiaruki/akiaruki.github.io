@@ -45,16 +45,6 @@ libde265 1.0.15: https://github.com/strukturag/libde265/tree/v1.0.15
 UTIF 3.1.0: https://github.com/photopea/UTIF.js
 pako 1.0.11: https://github.com/nodeca/pako/tree/1.0.11
 libwebp 1.6.0: https://github.com/SDWebImage/libwebp-Xcode/tree/1.6.0
-Google Mobile Ads Swift package 13.11.0:
-https://github.com/googleads/swift-package-manager-google-mobile-ads/tree/13.11.0
-Google UMP Swift package 3.1.0:
-https://github.com/googleads/swift-package-manager-google-user-messaging-platform/tree/3.1.0
-
-The Google SDK binaries/services are subject to Google's applicable terms:
-https://developers.google.com/admob/ios/download
-https://developers.google.com/terms
-Their integration repositories' Apache license is reproduced below and does
-not relicense the SDK binaries.
 
 Local packaging changes to the LibRaw JavaScript bindings rewrite module paths
 for local loading and rename generated module files for native asset loading.
@@ -2363,17 +2353,6 @@ APACHE LICENSE 2.0 — CORDOVA-DERIVED CODE
    See the License for the specific language governing permissions and
    limitations under the License.
 
-
-
-========================================================================
-GOOGLE SWIFT PACKAGE INTEGRATIONS — COPYRIGHT
-========================================================================
-
-Copyright 2021 Google LLC
-
-Both integration repositories are licensed under the Apache License, Version
-2.0, reproduced above. This applies to their covered repository files, not a
-relicensing of the Google Mobile Ads or User Messaging Platform SDK binaries.
 
 
 ========================================================================
